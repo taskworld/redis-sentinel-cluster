@@ -1,5 +1,5 @@
 FROM redis:3.2.3
-MAINTAINER Yesu Aggarwal (yesuagg@gmail.com)
+MAINTAINER Taskworld Dev (Forked from https://github.com/yesuagg/redis-sentinel-cluster)
 
 ADD docker-entrypoint.sh /
 ADD sentinel.conf /

@@ -1,5 +1,5 @@
 image:
-	docker build -t yesuagg/redis-sentinel-cluster:0.1.0 .
+	docker build -t integration1taskworld/redis-sentinel-cluster:0.0.1 .
 
 push: image
-	docker push yesuagg/redis-sentinel-cluster:0.1.0
+	docker push integration1taskworld/redis-sentinel-cluster:0.0.1

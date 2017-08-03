@@ -1,6 +1,6 @@
 # redis-sentinel-cluster
 
-Dockerfile for [Redis Sentinel](http://redis.io/topics/sentinel). Image is available directly from [public docker registry](https://hub.docker.com/r/yesuagg/redis-sentinel-cluster/).
+Dockerfile for [Redis Sentinel](http://redis.io/topics/sentinel). Image is available directly from [public docker registry](https://hub.docker.com/r/integration1taskworld/redis-sentinel-cluster/).
 
 ## Redis Sentinel
 
@@ -18,8 +18,8 @@ It will fire a total of 6 redis instances with following configuration:
 
 | Node|Count|Ports|
 |---|:---:|---|
-|MASTER|1|6379|
-|SLAVE|2|6380, 6381|
+|MASTER|1|16379|
+|SLAVE|2|16380, 16381|
 |SENTINEL|3|26379, 26380, 26381|
 
 |Master Name|
@@ -30,33 +30,33 @@ To confirm that everything is working fine, you can check for ROLE of every node
 
 ###### master:
 ```sh
-$ redis-cli -p 6379 ROLE
+$ redis-cli -p 16379 ROLE
 1) "master"
 2) (integer) 10669
 3) 1) 1) "127.0.0.1"
-      2) "6380"
+      2) "16380"
       3) "10528"
    2) 1) "127.0.0.1"
-      2) "6381"
+      2) "16381"
       3) "10528"
 ```
 
 ###### slave 1:
 ```sh
-$ redis-cli -p 6380 ROLE
+$ redis-cli -p 16380 ROLE
  1) "slave"
  2) "127.0.0.1"
- 3) (integer) 6379
+ 3) (integer) 16379
  4) "connected"
  5) (integer) 12657
 ```
 
 ###### slave 2:
 ```sh
-$ redis-cli -p 6381 ROLE
+$ redis-cli -p 16381 ROLE
  1) "slave"
  2) "127.0.0.1"
- 3) (integer) 6379
+ 3) (integer) 16379
  4) "connected"
  5) (integer) 13221
 ```
@@ -88,7 +88,7 @@ $ redis-cli -p 26381 ROLE
 ## How to use this image
 
 ```sh
-$ docker run -d --name redis_sentinel_dev -p 6379:6379 -p 6380:6380 -p 6381:6381 -p 26379:26379 -p 26380:26380 -p 26381:26381 yesuagg/redis-sentinel-cluster:0.1.0
+$ docker run -d --name redis_sentinel_dev -p 16379:16379 -p 16380:16380 -p 16381:16381 -p 26379:26379 -p 26380:26380 -p 26381:26381 integration1taskworld/redis-sentinel-cluster
 ```
 
 or the easier solution would be to run it using docker compose. Have a docker-compose.yml similar to one in this repo and run:
