@@ -1,4 +1,4 @@
-FROM redis:3.2.3
+FROM redis:latest
 MAINTAINER Taskworld Dev (Forked from https://github.com/yesuagg/redis-sentinel-cluster)
 
 ADD docker-entrypoint.sh /

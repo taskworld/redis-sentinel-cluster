@@ -24,7 +24,7 @@ It will fire a total of 6 redis instances with following configuration:
 
 |Master Name|
 |:---:|
-|redis_dev_master|
+|mymaster|
 
 To confirm that everything is working fine, you can check for ROLE of every node. Here is the sample output.
 
@@ -66,7 +66,7 @@ $ redis-cli -p 16381 ROLE
 ```sh
 $ redis-cli -p 26379 ROLE
   1) "sentinel"
-  2) 1) "redis_dev_master"
+  2) 1) "mymaster"
 ```
 
 ###### sentinel 2:
@@ -74,7 +74,7 @@ $ redis-cli -p 26379 ROLE
 ```sh
 $ redis-cli -p 26380 ROLE
   1) "sentinel"
-  2) 1) "redis_dev_master"
+  2) 1) "mymaster"
 ```
 
 ###### sentinel 3:
@@ -82,7 +82,7 @@ $ redis-cli -p 26380 ROLE
 ```sh
 $ redis-cli -p 26381 ROLE
   1) "sentinel"
-  2) 1) "redis_dev_master"
+  2) 1) "mymaster"
 ```
 
 ## How to use this image
